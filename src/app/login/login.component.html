@@ -1,0 +1,13 @@
+<div fxFlex fxLayoutAlign="center center" >
+    <mat-card fxFlex="25" fxLayout="column" fxLayoutAlign="center center" fxFlexAlign="center" fxLayoutGap="15px">
+        <mat-card-title fxFlexAlign="start">Autentique-se</mat-card-title>
+        <mat-card-content fxFlex fxFlexFill fxLayout="column" fxLayoutGap="15px" >
+            <form fxFlex fxLayout="column" [formGroup]="form">
+                <username [formGroup]="form"></username>
+                <password [formGroup]="form"></password>
+            </form>
+            <button-entrar [formGroup]="form"></button-entrar>
+            <button-cadastrar></button-cadastrar>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,4 @@
+<mat-form-field [formGroup]="formGroup" fxFlex>
+    <input fxFlex type="text" matInput placeholder="Usuário" formControlName="username" required>
+    <mat-hint [ngStyle]="{color: '#ff0000'}" *ngIf="!formGroup.controls['username'].valid" >Digite o usuário</mat-hint>
+</mat-form-field>

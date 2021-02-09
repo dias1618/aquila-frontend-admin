@@ -1,0 +1,16 @@
+<div fxFlex fxLayoutAlign="center center" >
+    <mat-card fxFlex="25" fxLayout="column" fxLayoutAlign="center center" fxFlexAlign="center" fxLayoutGap="15px">
+        <mat-card-title fxFlexAlign="start">Cadastre-se</mat-card-title>
+        <mat-card-content fxFlex fxFlexFill fxLayout="column" fxLayoutGap="15px" >
+            <form fxFlex fxLayout="column" [formGroup]="formGroup">
+                <name [formGroup]="formGroup"></name>
+                <username [formGroup]="formGroup"></username>
+                <password [formGroup]="formGroup"></password>
+                <confirm-password [formGroup]="formGroup"></confirm-password>
+                <email [formGroup]="formGroup"></email>
+            </form>
+            <button-salvar [formGroup]="formGroup"></button-salvar>
+            <button-voltar></button-voltar>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,4 @@
+<mat-form-field [formGroup]="formGroup" fxFlex>
+    <input fxFlex type="name" matInput placeholder="Nome" formControlName="name" required>
+    <mat-hint [ngStyle]="{color: '#ff0000'}" *ngIf="!formGroup.controls['name'].valid" >Digite o nome</mat-hint>
+</mat-form-field>

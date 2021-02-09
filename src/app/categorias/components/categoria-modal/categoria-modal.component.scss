@@ -1,0 +1,33 @@
+
+.mat-dialog-content{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+:host{
+
+    .header{
+        height: 50px;
+    }
+
+    .field-nome{
+        margin: 10px;
+    }
+
+    .modal-content{
+        margin: 10px;
+    }
+
+    .botoes{
+        margin-right: 10px;
+    }
+
+    .separador{
+        margin-top: 10px;
+    }
+
+    .check-fixo{
+        margin-top: 15px;
+    }
+}

@@ -1,0 +1,17 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container {
+    min-height: 89%;
+    min-width: 40%;
+}
+.content{
+    margin: 20px;
+}
+
+.app-modal .mat-dialog-container {
+    padding: 0;
+}
+
+.cdk-overlay-container {
+    z-index: 998 !important;
+}

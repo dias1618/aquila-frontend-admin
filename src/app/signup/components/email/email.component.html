@@ -1,0 +1,4 @@
+<mat-form-field [formGroup]="formGroup" fxFlex>
+    <input fxFlex type="email" matInput placeholder="Email" formControlName="email" required>
+    <mat-hint [ngStyle]="{color: '#ff0000'}" *ngIf="!formGroup.controls['email'].valid" >Digite o email</mat-hint>
+</mat-form-field>
