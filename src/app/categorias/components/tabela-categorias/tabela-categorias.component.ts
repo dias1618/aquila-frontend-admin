@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { CategoriaProvider } from 'app/providers/categoria.provider';
 import { MatDialog } from '@angular/material/dialog';
 import { CategoriaService } from 'app/services/categoria.service';
+import { CategoriaModalComponent } from '../categoria-modal/categoria-modal.component';
 
 @Component({
   selector: 'tabela-categorias',
@@ -28,12 +29,38 @@ export class TabelaCategoriasComponent implements OnInit {
   ) { }
 
   async ngOnInit(){
+    await this.load();
+  }
+
+  async load(){
     this.selection = new SelectionModel<Categoria>(this.allowMultiSelect, this.initialSelection);
     this.categoriaProvider.categorias = await this.categoriaService.get();
     this.dataSource = new MatTableDataSource<Categoria>(this.categoriaProvider.categorias);
     this.dataSource.paginator = this.paginator;
-    //this.selectedRow();
-    
+    this.selectedRow();
   }
 
+  selectedRow(){
+    this.selection.changed.subscribe((a) =>{
+        if (a.added[0]){
+          this.callCategoria(new Categoria(a.added[0]));
+        }
+    });
+  }
+
+  callCategoria(categoria:Categoria){
+    const dialogRef = this.dialog.open(CategoriaModalComponent, {
+      width: '35vw',
+      height: '35vh',
+      panelClass: 'app-modal',
+      data: categoria
+    });
+
+    dialogRef.afterClosed().subscribe(async result => {
+      if(result){
+        this.load();
+      }
+      this.selection.clear();
+    });
+  }
 }

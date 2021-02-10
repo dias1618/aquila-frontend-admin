@@ -18,4 +18,8 @@ export class CategoriaService{
     async get():Promise<Categoria[]>{
         return await this._categoriaController.get();
     }
+
+    async remove(categoria:Categoria):Promise<Categoria>{
+        return await this._categoriaController.remove(categoria);
+    }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { TabelaCategoriasComponent } from './components/tabela-categorias/tabela-categorias.component';
 
 @Component({
   selector: 'app-categorias',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categorias.component.scss']
 })
 export class CategoriasComponent implements OnInit {
+
+  @ViewChild('tabelaCategoria', {static: false}) tabelaCategoria: TabelaCategoriasComponent;
 
   constructor() { }
 

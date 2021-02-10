@@ -2,6 +2,6 @@
     <div fxFlex fxLayoutAlign="end center" fxLayoutGap="10px">
         <button-voltar></button-voltar>
     </div>
-    <tabela-categorias></tabela-categorias>
-    <button-add></button-add>
+    <tabela-categorias #tabelaCategoria></tabela-categorias>
+    <button-add [tabelaCategoria]="tabelaCategoria"></button-add>
 </div>

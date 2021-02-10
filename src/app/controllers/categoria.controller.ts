@@ -29,4 +29,10 @@ export class CategoriaController{
         return categorias;
     }
 
+    async remove(categoria:Categoria):Promise<Categoria>{
+        await axios.delete<Categoria>(`${environment.baseUrl.records}/categorias/${categoria.id}`, environment.axiosConfig)
+            .then(value => categoria = value.data);
+        return categoria;
+    }
+
 }

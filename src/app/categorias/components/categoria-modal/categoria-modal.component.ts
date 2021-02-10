@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Categoria } from 'app/models/categoria.entity';
 import { CategoriaService } from 'app/services/categoria.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { CategoriaValidator } from 'app/validators/categoria.validator';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-categoria-modal',
@@ -18,11 +19,15 @@ export class CategoriaModalComponent implements OnInit {
     private _categoriaService:CategoriaService,
     private _dialogRef: MatDialogRef<Categoria>,
     private _toastr: ToastrService,
-    private _categoriaValidator:CategoriaValidator
+    private _categoriaValidator:CategoriaValidator,
+    @Inject(MAT_DIALOG_DATA) public data: Categoria,
   ) { }
 
   ngOnInit(): void {
-    this.categoria = new Categoria({});
+    if(this.data)
+      this.categoria = new Categoria(this.data);
+    else
+      this.categoria = new Categoria({});
   }
 
   async salvar(){
@@ -37,8 +42,17 @@ export class CategoriaModalComponent implements OnInit {
     }
   }
 
-
   validate(categoria:Categoria){
     this._categoriaValidator.validate({categoria: categoria});
+  }
+
+  async remove(){
+    try{
+      await this._categoriaService.remove(this.categoria);
+      this._dialogRef.close({categoria: this.categoria});
+    }
+    catch(error){
+      this._toastr.error(`${error.response.data.message}`);
+    }
   }
 }

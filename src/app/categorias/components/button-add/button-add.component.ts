@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CategoriaModalComponent } from '../categoria-modal/categoria-modal.component';
 import { CategoriaProvider } from 'app/providers/categoria.provider';
 import { Categoria } from 'app/models/categoria.entity';
+import { TabelaCategoriasComponent } from '../tabela-categorias/tabela-categorias.component';
 
 @Component({
   selector: 'button-add',
@@ -11,9 +12,10 @@ import { Categoria } from 'app/models/categoria.entity';
 })
 export class ButtonAddComponent implements OnInit {
 
+  @Input() tabelaCategoria:TabelaCategoriasComponent;
+
   constructor(
     public dialog: MatDialog,
-    public categoriaProvider: CategoriaProvider
   ) { }
 
   ngOnInit(): void {
@@ -28,7 +30,7 @@ export class ButtonAddComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(async result => {
       if(result.categoria){
-        this.categoriaProvider.categorias.push(new Categoria(result.categoria));
+        await this.tabelaCategoria.load();
       }
     });
   }
