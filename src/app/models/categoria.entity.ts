@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, BaseEntity } from "typeorm";
+import { Video } from "./video.entity";
 
 @Entity()
 export class Categoria extends BaseEntity{
@@ -18,6 +19,9 @@ export class Categoria extends BaseEntity{
 
     @Column("integer")
     idPlatform:number;
+
+    @OneToMany(type => Video, videos => videos.categoria)
+    videos: Video[];
 
     toJson():string{
         return `{

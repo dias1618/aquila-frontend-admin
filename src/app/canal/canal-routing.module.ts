@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CanalComponent } from './canal.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: CanalComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

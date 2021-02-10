@@ -4,7 +4,6 @@ import { CategoriaService } from 'app/services/categoria.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { CategoriaValidator } from 'app/validators/categoria.validator';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-categoria-modal',

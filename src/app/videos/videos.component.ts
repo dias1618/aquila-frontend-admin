@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { TabelaVideosComponent } from './components/tabela-videos/tabela-videos.component';
 
 @Component({
   selector: 'app-videos',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./videos.component.scss']
 })
 export class VideosComponent implements OnInit {
+
+  @ViewChild('tabelaVideos', {static: false}) tabelaVideos: TabelaVideosComponent;
 
   constructor() { }
 
