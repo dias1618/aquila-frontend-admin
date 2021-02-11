@@ -8,6 +8,7 @@ import { LbdModule } from '../../lbd/lbd.module';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { HomeComponent } from '../../home/home.component';
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HomeComponent } from '../../home/home.component';
     AdminLayoutRoutes,
     FormsModule,
     LbdModule,
+    YouTubePlayerModule
   ],
   declarations: [
     HomeComponent,

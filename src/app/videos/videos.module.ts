@@ -12,6 +12,10 @@ import { VideoService } from 'app/services/video.service';
 import { VideoController } from 'app/controllers/video.controller';
 import { VideoProvider } from 'app/providers/video.provider';
 import { VideoValidator } from 'app/validators/video.validator';
+import { CanalService } from 'app/services/canal.service';
+import { CanalController } from 'app/controllers/canal.controller';
+import { CategoriaService } from 'app/services/categoria.service';
+import { CategoriaController } from 'app/controllers/categoria.controller';
 
 let components = [
   TabelaVideosComponent, 
@@ -36,7 +40,11 @@ let components = [
     VideoService,
     VideoController,
     VideoProvider,
-    VideoValidator
+    VideoValidator,
+    CanalService,
+    CanalController,
+    CategoriaService,
+    CategoriaController
   ]
 })
 export class VideosModule { }

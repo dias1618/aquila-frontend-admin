@@ -12,6 +12,23 @@
             <mat-form-field fxFlex>
                 <input matInput placeholder="Descrição" [(ngModel)]="video.descricao" required="true">
             </mat-form-field>
+            <mat-form-field fxFlex>
+                <input matInput placeholder="URL" [(ngModel)]="video.url" required="true">
+            </mat-form-field>
+            <mat-form-field fxFlex>
+                <mat-select #canalSelected placeholder="Canal" [(ngModel)]="video.canal">
+                    <mat-option *ngFor="let canal of canais" [value]="canal">
+                      {{canal.titulo}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field fxFlex>
+                <mat-select #categoriaSelected placeholder="Categoria" [(ngModel)]="video.categoria">
+                    <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+                      {{categoria.nome}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
     </mat-dialog-content>
     <mat-dialog-actions class="botoes" fxLayoutAlign="end center">

@@ -22,7 +22,7 @@ export class ButtonAddComponent implements OnInit {
   addVideo($event){
     const dialogRef = this.dialog.open(VideoModalComponent, {
       width: '35vw',
-      height: '43vh',
+      height: '70vh',
       panelClass: 'app-modal'
     });
 

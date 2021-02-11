@@ -51,7 +51,7 @@ export class TabelaVideosComponent implements OnInit {
   callVideo(video:Video){
     const dialogRef = this.dialog.open(VideoModalComponent, {
       width: '35vw',
-      height: '43vh',
+      height: '70vh',
       panelClass: 'app-modal',
       data: video
     });
