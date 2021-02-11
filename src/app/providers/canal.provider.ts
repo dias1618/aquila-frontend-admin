@@ -12,8 +12,8 @@ export class CanalProvider{
         this.canais = [];
     }
 
-    updateLista(lista:Canal){
-        this.dataSource.next(lista);
+    updateLista(canal:Canal){
+        this.dataSource.next(canal);
     }
 
 }
