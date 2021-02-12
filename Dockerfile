@@ -1,12 +1,12 @@
-FROM node:13-alpine
-RUN apk add git
-WORKDIR /app
-#ADD package.json /app/package.json
+FROM node:14.13.1 as build
+WORKDIR /usr/src/app
 RUN git clone https://github.com/dias1618/aquila-frontend-admin.git
 WORKDIR /app/aquila-frontend-admin
-RUN npm config set registry http://registry.npmjs.org
-RUN npm install
-#ADD . /app
-EXPOSE 3000
-CMD ["npm", "run", "start"]
+RUN npm i
+RUN npm run build
+FROM nginx:1.17.1-alpine
+COPY nginx.conf /etc/nginx/nginx.conf
+RUN mkdir -p /usr/share/nginx/html
+COPY --from=build /usr/src/app/aquila-frontend-admin/dist /usr/share/nginx/html
+CMD ["exec nginx -g 'daemon off;'"]
 
