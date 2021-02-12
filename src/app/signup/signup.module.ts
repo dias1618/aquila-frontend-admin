@@ -10,7 +10,7 @@ import { EmailComponent } from './components/email/email.component';
 import { ButtonSalvarComponent } from './components/button-salvar/button-salvar.component';
 import { ButtonVoltarComponent } from './components/button-voltar/button-voltar.component';
 import { NameComponent } from './components/name/name.component';
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from 'app/view/shared/shared.module';
 
 
 var components = [

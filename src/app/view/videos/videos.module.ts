@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { VideosRoutingModule } from './videos-routing.module';
 import { TabelaVideosComponent } from './components/tabela-videos/tabela-videos.component';
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from 'app/view/shared/shared.module';
 import { VideosComponent } from './videos.component';
 import { VideoModalComponent } from './components/video-modal/video-modal.component';
 import { ButtonAddComponent } from './components/button-add/button-add.component';

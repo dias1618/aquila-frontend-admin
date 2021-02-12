@@ -5,7 +5,7 @@ import { UsuarioService } from 'app/services/usuario.service';
 import { UsuarioController } from 'app/controllers/usuario.controller';
 import { UsuarioProvider } from 'app/providers/usuario.provider';
 import { UsuariosComponent } from './usuarios.component';
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from 'app/view/shared/shared.module';
 
 let components = [
   TabelaUsuariosComponent,

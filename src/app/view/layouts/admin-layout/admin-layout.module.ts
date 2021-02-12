@@ -10,7 +10,7 @@ import { CategoriaService } from 'app/services/categoria.service';
 import { CategoriaController } from 'app/controllers/categoria.controller';
 import { CanalService } from 'app/services/canal.service';
 import { CanalController } from 'app/controllers/canal.controller';
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from 'app/view/shared/shared.module';
 import { VideoService } from 'app/services/video.service';
 import { VideoController } from 'app/controllers/video.controller';
 

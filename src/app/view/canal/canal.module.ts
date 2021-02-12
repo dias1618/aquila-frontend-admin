@@ -3,7 +3,7 @@ import { CanalRoutingModule } from './canal-routing.module';
 import { TabelaCanaisComponent } from './components/tabela-canais/tabela-canais.component';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
 import { CanalModalComponent } from './components/canal-modal/canal-modal.component';
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from 'app/view/shared/shared.module';
 import { CanalService } from 'app/services/canal.service';
 import { CanalController } from 'app/controllers/canal.controller';
 import { CanalProvider } from 'app/providers/canal.provider';

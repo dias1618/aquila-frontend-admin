@@ -3,7 +3,7 @@ import { CategoriasRoutingModule } from './categorias-routing.module';
 import { TabelaCategoriasComponent } from './components/tabela-categorias/tabela-categorias.component';
 import { ButtonAddComponent } from './components/button-add/button-add.component';
 import { CategoriaModalComponent } from './components/categoria-modal/categoria-modal.component';
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from 'app/view/shared/shared.module';
 import { CategoriaService } from 'app/services/categoria.service';
 import { CategoriaController } from 'app/controllers/categoria.controller';
 import { CategoriaProvider } from 'app/providers/categoria.provider';

@@ -6,7 +6,7 @@ import { LoginComponent } from './login.component';
 import { UsernameComponent } from './components/username/username.component';
 import { PasswordComponent } from './components/password/password.component';
 import { ButtonEntrarComponent } from './components/button-entrar/button-entrar.component';
-import { SharedModule } from 'app/shared/shared.module';
+import { SharedModule } from 'app/view/shared/shared.module';
 import { ButtonCadastrarComponent } from './components/button-cadastrar/button-cadastrar.component';
 
 
