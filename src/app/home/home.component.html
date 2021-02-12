@@ -1,4 +1,24 @@
 <div class="main-content">
-    <youtube-player [videoId]="videoId"></youtube-player>    
-    <button class="bottom-right" mat-raised-button color="accent" id="add-button" matTooltip="Retornar para a tela inicial" (click)="trocar()"><i class="material-icons" >arrow_back</i> Voltar</button>
+    <div fxFlex class="container" fxLayout="row">
+        <youtube-player fxFlex [videoId]="videoId"></youtube-player>
+        <div fxLayout="column">
+            <mat-form-field fxFlex>
+                <mat-select #canalSelected placeholder="Canal" (selectionChange)="inicializarVideos()">
+                    <mat-option>Selecione...</mat-option>
+                    <mat-option *ngFor="let canal of canais" [value]="canal">
+                      {{canal.titulo}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field fxFlex>
+                <mat-select #categoriaSelected placeholder="Categoria" (selectionChange)="inicializarVideos()">
+                    <mat-option>Selecione...</mat-option>
+                    <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+                      {{categoria.nome}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="accent" matTooltip="Passar para o próximo video" (click)="chamarVideo(addPosicao())">Próximo <i class="material-icons" >arrow_right_alt</i></button>
+        </div>
+    </div>
 </div>

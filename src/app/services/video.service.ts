@@ -22,4 +22,8 @@ export class VideoService{
     async remove(video:Video):Promise<Video>{
         return await this._videoController.remove(video);
     }
+
+    async getRecommendation(idUsuario:number, params?:{idCanal?:number, idCategoria?:number}):Promise<Video[]>{
+        return await this._videoController.recommendation(idUsuario, params);
+    }
 }

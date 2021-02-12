@@ -35,4 +35,22 @@ export class VideoController{
         return video;
     }
 
+    async recommendation(idUsuario:number, params?:{idCanal?:number, idCategoria?:number}):Promise<Video[]>{
+        let videos:Video[] = [];
+        await axios.get<Video[]>(`${environment.baseUrl.recommendation}/recommendations?idUsuario=${idUsuario}${this.createQueryParams(params)}`, environment.axiosConfig)
+            .then(value => videos = value.data);
+        return videos;
+    }
+
+    createQueryParams(params?:{idCanal?:number, idCategoria?:number}){
+        console.log(params);
+        let query:string='';
+        if(!params)
+            return query;
+        if(params.idCanal)
+            query+=`&idCanal=${params.idCanal}`
+        if(params.idCategoria)
+            query+=`&idCategoria=${params.idCategoria}`
+        return query;
+    }
 }

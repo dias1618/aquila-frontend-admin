@@ -2,7 +2,8 @@ export const environment = {
   production: false,
   baseUrl: {
     auth: 'http://localhost:3002',
-    records: 'http://localhost:3003'
+    records: 'http://localhost:3003',
+    recommendation: 'http://localhost:3004',
   },
   axiosConfig: { headers: {
     common: {
