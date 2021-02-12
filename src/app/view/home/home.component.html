@@ -1,0 +1,30 @@
+<div class="main-content">
+    <div fxFlex class="container" fxLayout="row" fxLayoutGap="20px">
+        <youtube-player [width]="500" [videoId]="videoId"></youtube-player>
+        <div fxFlex *ngIf="this.videos && this.videos.length==0">
+            <h1 style="text-align: center; margin-top: 100px;">Nenhum video a ser exibido</h1>
+        </div>
+        <div fxLayout="column" fxFlex>
+            <h4>
+                Selecione os filtros que deseja para montar a playlist dos videos
+            </h4>
+            <mat-form-field fxFlex="20">
+                <mat-select fxFlex #canalSelected placeholder="Canal" (selectionChange)="inicializarVideos()">
+                    <mat-option>Selecione...</mat-option>
+                    <mat-option *ngFor="let canal of canais" [value]="canal">
+                      {{canal.titulo}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field fxFlex="20">
+                <mat-select #categoriaSelected placeholder="Categoria" (selectionChange)="inicializarVideos()">
+                    <mat-option>Selecione...</mat-option>
+                    <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+                      {{categoria.nome}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" matTooltip="Passar para o próximo video" (click)="chamarVideo(addPosicao())">Próximo <i class="material-icons" >arrow_right_alt</i></button>
+        </div>
+    </div>
+</div>

@@ -4,29 +4,21 @@ import { Video } from "./video.entity";
 @Entity()
 export class Canal extends BaseEntity{
 
-    constructor(data: {id?:number, idPlatform?:string, titulo?:string, descricao?:string, urlImagem?:string}){
+    constructor(data: {id?:number, titulo?:string, descricao?:string}){
         super();
         this.id = data && data.id || 0;
-        this.idPlatform = data && data.idPlatform || "";
         this.titulo = data && data.titulo || "";
         this.descricao = data && data.descricao || "";
-        this.urlImagem = data && data.urlImagem || "";
     }
 
     @PrimaryGeneratedColumn()
     id:number;
 
-    @Column("varchar", {nullable: true})
-    idPlatform:string;
-
     @Column("varchar")
     titulo:string;
 
-    @Column("varchar", {nullable: true})
+    @Column("varchar")
     descricao:string;
-
-    @Column("varchar", {nullable: true})
-    urlImagem:string;
 
     @OneToMany(type => Video, videos => videos.canal)
     videos: Video[];
@@ -34,10 +26,8 @@ export class Canal extends BaseEntity{
     toJson():string{
         return `{
             "id": ${this.id},
-            "idPlatform": ${this.idPlatform},
             "titulo": "${this.titulo}",
             "descricao": "${this.descricao}",
-            "urlImagem": "${this.urlImagem}",
         }`
     }
 }

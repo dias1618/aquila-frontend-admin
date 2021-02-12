@@ -43,7 +43,6 @@ export class VideoController{
     }
 
     createQueryParams(params?:{idCanal?:number, idCategoria?:number}){
-        console.log(params);
         let query:string='';
         if(!params)
             return query;
