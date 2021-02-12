@@ -23,8 +23,8 @@
                 </mat-select>
             </mat-form-field>
             <mat-form-field fxFlex>
-                <mat-select #categoriaSelected placeholder="Categoria" [(ngModel)]="video.categoria">
-                    <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+                <mat-select #categoriaSelected placeholder="Categoria" [(ngModel)]="video.categoria.id">
+                    <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
                       {{categoria.nome}}
                     </mat-option>
                 </mat-select>

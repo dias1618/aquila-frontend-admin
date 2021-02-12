@@ -4,11 +4,10 @@ import { Video } from "./video.entity";
 @Entity()
 export class Categoria extends BaseEntity{
 
-    constructor(data: {id?:number, nome?:string, idPlatform?:number}){
+    constructor(data: {id?:number, nome?:string}){
         super();
         this.id = data && data.id || 0;
         this.nome = data && data.nome || "";
-        this.idPlatform = data && data.idPlatform || 0;
     }
 
     @PrimaryGeneratedColumn()
@@ -17,9 +16,6 @@ export class Categoria extends BaseEntity{
     @Column("varchar")
     nome:string;
 
-    @Column("integer")
-    idPlatform:number;
-
     @OneToMany(type => Video, videos => videos.categoria)
     videos: Video[];
 
@@ -27,7 +23,6 @@ export class Categoria extends BaseEntity{
         return `{
             "id": ${this.id},
             "nome": "${this.nome}",
-            "idPlatform": "${this.idPlatform}",
         }`
     }
 }
