@@ -3,17 +3,17 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminLayoutComponent } from './view/layouts/admin-layout/admin-layout.component';
 import { AuthGuard } from './guards/auth-guard';
 
 const routes: Routes =[
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m=>m.LoginModule)
+    loadChildren: () => import('./view/login/login.module').then(m=>m.LoginModule)
   },
   {
     path: 'signup',
-    loadChildren: () => import('./signup/signup.module').then(m=>m.SignupModule)
+    loadChildren: () => import('./view/signup/signup.module').then(m=>m.SignupModule)
   },
   {
     path: '',
