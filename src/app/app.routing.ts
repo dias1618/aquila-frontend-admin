@@ -20,7 +20,7 @@ const routes: Routes =[
     component: AdminLayoutComponent,
     children: [{
       path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
+      loadChildren: './view/layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }],
     canActivate: [AuthGuard]
   },
