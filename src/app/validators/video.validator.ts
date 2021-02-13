@@ -26,12 +26,12 @@ export class VideoValidator implements Validator{
     }
 
     private validateCanal(video:Video){
-        if(!video.canal || video.canal == null)
+        if(!video.canal || video.canal == null || video.canal.id == null)
             throw new Error('Faltando canal do video');
     }
 
     private validateCategoria(video:Video){
-        if(!video.categoria || video.categoria == null)
+        if(!video.categoria || video.categoria == null || video.categoria.id == null)
             throw new Error('Faltando categoria do video');
     }
 }
