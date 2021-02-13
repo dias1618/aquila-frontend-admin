@@ -35,8 +35,9 @@ export class VideoModalComponent implements OnInit, AfterViewInit {
   ) { }
 
   async ngOnInit() {
-    if(!this.data)
-      this.video = new Video({});
+    if(!this.data){
+      this.video = new Video({canal: new Canal({}), categoria: new Categoria({})});
+    }
     else
       this.video = new Video(this.data);
   }
